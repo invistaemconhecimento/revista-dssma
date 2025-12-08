@@ -25,82 +25,6 @@
         .capa p { font-size:1rem; opacity:0.9; margin-bottom:15px; }
         .capa-icon { font-size:3rem; margin:15px 0; }
 
-        .btn-sobre {
-            margin-top:15px;
-            padding:12px 20px;
-            background:#ffffff22;
-            color:white;
-            border:2px solid white;
-            border-radius:10px;
-            font-weight:600;
-            font-size:0.95rem;
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            cursor:pointer;
-            transition:all .2s;
-        }
-        .btn-sobre:hover {
-            background:#ffffff33;
-            transform:scale(1.03);
-        }
-
-        /* MODAL / POP-UP */
-        .modal-bg {
-            position:fixed;
-            inset:0;
-            background:rgba(0,0,0,0.55);
-            backdrop-filter:blur(4px);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            opacity:0;
-            pointer-events:none;
-            transition:opacity .3s ease;
-            z-index:999;
-        }
-        .modal-bg.show {
-            opacity:1;
-            pointer-events:auto;
-        }
-        .modal-box {
-            background:white;
-            max-width:500px;
-            width:90%;
-            border-radius:15px;
-            padding:25px 20px;
-            box-shadow:0 4px 20px rgba(0,0,0,0.25);
-            animation:pop .25s ease;
-        }
-        @keyframes pop {
-            from { transform:scale(.85); opacity:0; }
-            to   { transform:scale(1); opacity:1; }
-        }
-        .modal-titulo {
-            font-size:1.3rem;
-            font-weight:700;
-            color:#378C8C;
-            margin-bottom:15px;
-            text-align:center;
-        }
-        .modal-conteudo {
-            font-size:1rem;
-            color:#444;
-            line-height:1.6;
-            margin-bottom:25px;
-        }
-        .modal-fechar {
-            display:block;
-            margin:0 auto;
-            padding:10px 18px;
-            background:#378C8C;
-            color:white;
-            border:none;
-            border-radius:10px;
-            font-weight:600;
-            cursor:pointer;
-        }
-
         /* ÍNDICE */
         .indice { background:white; border-radius:15px; padding:20px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
         .indice h2 { color:#378C8C; margin-bottom:15px; font-size:1.3rem; }
@@ -115,14 +39,34 @@
         /* PÁGINAS */
         .pagina { background:white; border-radius:15px; padding:25px 20px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-top:5px solid #378C8C; position:relative; }
         .pagina-ambiente { border-top-color:#2E7D5F; }
-        .pagina-comportamento { border-top-color:#2E7D5F; }
-        .pagina-numero { position:absolute; top:15px; right:15px; background:#D45A2E; color:white; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1rem; }
+        .pagina-comportamento { border-top-color:#D45A2E; }
+        .pagina-numero { position:absolute; top:15px; right:15px; background:#378C8C; color:white; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1rem; }
         .pagina-titulo { color:#378C8C; font-size:1.2rem; font-weight:600; margin-bottom:15px; padding-right:50px; }
+        .pagina-ambiente .pagina-titulo { color:#2E7D5F; }
+        .pagina-comportamento .pagina-titulo { color:#D45A2E; }
+        .pagina-conteudo { font-size:1.05rem; line-height:1.7; color:#444; margin-bottom:20px; }
 
         /* PERGUNTA */
         .pergunta { background: rgba(55,140,140,0.08); border-left:4px solid #378C8C; padding:15px; border-radius:0 10px 10px 0; margin-top:20px; }
         .pergunta-titulo { color:#378C8C; font-weight:600; font-size:0.9rem; margin-bottom:8px; }
         .pergunta-texto { font-size:1rem; color:#58594F; font-style:italic; line-height:1.5; }
+
+        /* NAVEGAÇÃO */
+        .navegacao { display:flex; justify-content:space-between; margin-top:25px; padding-top:20px; border-top:1px solid rgba(0,0,0,0.1); gap:10px; flex-wrap:wrap; }
+        .btn { padding:12px 20px; background:#378C8C; color:white; border:none; border-radius:10px; font-weight:600; font-size:0.95rem; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:all .2s; min-height:45px; }
+        .btn:active { opacity:0.8; transform:scale(.96); }
+        .btn-voltar { background:#93BFBB; color:#043; }
+        .indice-mini { background:transparent; color:#378C8C; border-left: none; padding-left:0; }
+
+        /* RODAPÉ */
+        .rodape { background: rgba(55,140,140,0.08); border-radius:15px; padding:25px 20px; margin-top:30px; text-align:center; }
+        .rodape h3 { color:#378C8C; font-size:1.2rem; margin-bottom:15px; }
+
+        /* BADGE */
+        .badge { display:inline-block; padding:4px 10px; border-radius:15px; font-size:0.75rem; font-weight:600; margin-left:8px; }
+        .badge-seguranca { background: rgba(55,140,140,0.15); color:#378C8C; }
+        .badge-ambiente { background: rgba(46,125,95,0.15); color:#2E7D5F; }
+        .badge-comportamento { background: rgba(212,90,46,0.15); color:#D45A2E; }
 
         /* BOTÃO TOPO */
         .topo-btn {
@@ -135,59 +79,30 @@
         @media (max-width: 768px) {
             body { padding:8px; }
             .capa h1 { font-size:1.4rem; }
-            .btn-sobre { font-size:0.85rem; padding:10px 15px; }
+            .indice-item { padding:12px; }
+            .pagina { padding:20px 15px; }
+            .pagina-titulo { font-size:1.1rem; }
+            .btn { padding:10px 15px; font-size:0.9rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- POP-UP SOBRE -->
-    <div class="modal-bg" id="modalSobre">
-        <div class="modal-box">
-            <div class="modal-titulo"><i class="fas fa-users"></i> Equipe do Projeto</div>
-            <div class="modal-conteudo">
-                <p><strong>Idealização:</strong><br>
-                Aline Suene • aline.andrade@erobr.com<br>
-                Odino Cutrim • odino.junior@erobr.com</p>
-
-                <p><strong>Criação & Edição:</strong><br>
-                Alexandre Oliveira<br>
-                +55 (94) 99232-7693<br>
-                alexandre.oliveira@erobr.com</p>
-
-                <p><strong>Projeto:</strong><br>
-                Revista Digital DSSMA – Beneficiamento ERO Tucumã</p>
-            </div>
-
-            <button class="modal-fechar" id="fecharSobre">Fechar</button>
-        </div>
-    </div>
-
     <a href="#capa" class="topo-btn" id="topoBtn" aria-label="Subir ao topo"><i class="fas fa-arrow-up"></i></a>
 
     <div class="container">
         <!-- CAPA -->
         <section class="capa" id="capa">
-            
-            <div style="text-align:center; margin-bottom:0px;">
-                <img src="./logoERO.png" alt="Logo ERO Brasil" style="max-width:100px;height:auto;border-radius:5px">
-            </div>
-            
+            <div class="capa-icon"><i class="fas fa-hard-hat"></i></div>
             <h1>Revista DSSMA - Beneficiamento ERO Tucumã</h1>
-            <p>Diálogo Diário de Saúde, Segurança e Meio Ambiente • Edição Inaugural de Dezembro de 2025</p>
+            <p>Diálogo Diário de Saúde, Segurança e Meio Ambiente • Edição Especial de Dezembro de 2025</p>
             <p style="margin-top:10px;"><strong>Cuidar é prevenir. Trabalhar juntos é evoluir.</strong></p>
-
-            <!-- BOTÃO SOBRE -->
-            <button class="btn-sobre" id="btnSobre">
-                <i class="fas fa-info-circle"></i> Sobre
-            </button>
         </section>
 
-        <!-- ÍNDICE (mantido igual) -->
+        <!-- ÍNDICE -->
         <section class="indice" id="indice">
             <h2><i class="fas fa-list-ol"></i> Índice Interativo</h2>
             <p style="margin-bottom:15px; color:#666; font-size:0.9rem;">Toque em qualquer tópico para ler:</p>
-            <div class="indice-lista" id="indiceLista"></div>
+            <div class="indice-lista" id="indiceLista"><!-- conteúdo gerado --></div>
 
             <div style="text-align:center; margin-top:20px;">
                 <a href="#pagina-1" id="startReadingBtn" class="btn" style="background:#D45A2E;">
@@ -196,9 +111,10 @@
             </div>
         </section>
 
+        <!-- Onde as páginas serão inseridas -->
         <div id="paginas"></div>
 
-        <!-- RODAPÉ (mantido igual) -->
+        <!-- RODAPÉ -->
         <section class="rodape" id="rodape">
             <h3>Nossa segurança é construída todo dia, por cada um de nós.</h3>
             <p style="margin:15px 0; color:#555;">Comunique, previna, cuide-se e cuide do próximo.</p>
@@ -207,83 +123,122 @@
             <a href="#capa" class="btn" style="background:#93BFBB;">
                 <i class="fas fa-home"></i> Voltar ao Início
             </a>
+
+            <div style="margin-top:25px; font-size:0.8rem; color:#666; line-height:1.5;">
+                <p>Revista DSSMA Digital • Use como guia para seus Diálogos Diários de Saúde, Segurança e Meio Ambiente</p>
+                <p>Idealizado por Aline Suene - aline.andrade@erobr.com</p>
+                <p>Criado e editado por Alexandre Oliveira</p>
+                <p>+55 (91) 99232-7693</p>
+                <p>alexandre.oliveira@erobr.com</p>
+            </div>
         </section>
     </div>
 
-<script>
-(function(){
-    'use strict';
+    <script>
+    (function(){
+        'use strict';
 
-    /* --- MODAL SOBRE --- */
-    const btnSobre = document.getElementById("btnSobre");
-    const modalSobre = document.getElementById("modalSobre");
-    const fecharSobre = document.getElementById("fecharSobre");
+        const topoBtn = document.getElementById('topoBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) topoBtn.classList.add('visible'); else topoBtn.classList.remove('visible');
+        });
 
-    btnSobre.onclick = () => modalSobre.classList.add("show");
-    fecharSobre.onclick = () => modalSobre.classList.remove("show");
-    modalSobre.onclick = e => { if(e.target === modalSobre) modalSobre.classList.remove("show"); };
+        // Suavizar scroll para âncoras (delegado)
+        document.addEventListener('click', function(e){
+            const a = e.target.closest('a[href^="#"]');
+            if (!a) return;
+            const href = a.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+            }
+        });
 
-    /* BOTÃO TOPO */
-    const topoBtn = document.getElementById('topoBtn');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) topoBtn.classList.add('visible'); 
-        else topoBtn.classList.remove('visible');
-    });
+        // Carregar temas do JSON e gerar índice + páginas
+        async function carregarTemas() {
+            try {
+                const res = await fetch('temas.json', { cache: "no-store" });
+                if (!res.ok) throw new Error('Não foi possível carregar temas.json: ' + res.status);
+                const temas = await res.json();
 
-    /* SUAVE PARA ÂNCORAS */
-    document.addEventListener('click', function(e){
-        const a = e.target.closest('a[href^="#"]');
-        if (!a) return;
-        const href = a.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+                gerarIndice(temas);
+                gerarPaginas(temas);
+            } catch (err) {
+                console.error(err);
+                const container = document.getElementById('paginas');
+                container.innerHTML = '<div style="background:#ffecec;border:1px solid #f5c6cb;padding:20px;border-radius:10px;">Erro ao carregar <strong>temas.json</strong>. Verifique se o arquivo existe na mesma pasta e se está sendo servido por um servidor (fetch pode falhar ao abrir o arquivo diretamente no sistema de arquivos). Mensagem: ' + err.message + '</div>';
+            }
         }
-    });
 
-    /* CARREGAR TEMAS */
-    async function carregarTemas() {
-        try {
-            const res = await fetch('temas.json', { cache: "no-store" });
-            if (!res.ok) throw new Error('Erro ao carregar temas.json');
-            const temas = await res.json();
-            gerarIndice(temas);
-            gerarPaginas(temas);
-        } catch (err) {
-            document.getElementById('paginas').innerHTML =
-                '<div style="background:#ffecec;border:1px solid #f5c6cb;padding:20px;border-radius:10px;">Erro ao carregar temas.json</div>';
+        function gerarIndice(temas) {
+            const indiceLista = document.getElementById('indiceLista');
+            indiceLista.innerHTML = temas.map(t => `
+                <a href="#pagina-${t.id}" class="indice-item">
+                    <div class="indice-numero">${t.id}. ${t.titulo}</div>
+                    <div style="font-size:0.85rem; color:${categoriaCor(t.categoria)}; margin-top:5px;">
+                        <i class="${t.icone}"></i> ${t.categoria}
+                    </div>
+                </a>
+            `).join('');
+            // Ajusta botão começar a ler para o primeiro tema existente
+            const startBtn = document.getElementById('startReadingBtn');
+            if (temas.length) startBtn.setAttribute('href', '#pagina-' + temas[0].id);
         }
-    }
 
-    function gerarIndice(temas) {
-        const indiceLista = document.getElementById('indiceLista');
-        indiceLista.innerHTML = temas.map(t => `
-            <a href="#pagina-${t.id}" class="indice-item">
-                <div class="indice-numero">${t.id}. ${t.titulo}</div>
-            </a>
-        `).join('');
-    }
+        function gerarPaginas(temas) {
+            const paginas = document.getElementById('paginas');
+            let html = '';
+            temas.forEach((t, i) => {
+                const classePagina = t.categoria.toLowerCase().includes('ambiente') ? 'pagina pagina-ambiente' :
+                                     t.categoria.toLowerCase().includes('comport') ? 'pagina pagina-comportamento' : 'pagina';
+                html += `
+                <section class="${classePagina}" id="pagina-${t.id}">
+                    <div class="pagina-numero">${t.id}</div>
+                    <h2 class="pagina-titulo">
+                        <i class="${t.icone}"></i>
+                        ${t.titulo}
+                        <span class="badge ${t.badgeClass}">${t.categoria}</span>
+                    </h2>
+                    <div class="pagina-conteudo">${t.conteudo}</div>
 
-    function gerarPaginas(temas) {
-        const paginas = document.getElementById('paginas');
-        paginas.innerHTML = temas.map((t, i) => `
-            <section class="pagina" id="pagina-${t.id}">
-                <div class="pagina-numero">${t.id}</div>
-                <h2 class="pagina-titulo"><i class="${t.icone}"></i> ${t.titulo}</h2>
-                <div class="pagina-conteudo">${t.conteudo}</div>
+                    <div class="pergunta">
+                        <div class="pergunta-titulo">
+                            <i class="fas fa-question-circle"></i>
+                            PARA REFLEXÃO NO DSSMA
+                        </div>
+                        <div class="pergunta-texto">"${t.pergunta}"</div>
+                    </div>
 
-                <div class="pergunta">
-                    <div class="pergunta-titulo"><i class="fas fa-question-circle"></i> PARA REFLEXÃO NO DSSMA</div>
-                    <div class="pergunta-texto">"${t.pergunta}"</div>
-                </div>
-            </section>
-        `).join('');
-    }
+                    <div class="navegacao">
+                        ${ i > 0 ? `<a href="#pagina-${temas[i-1].id}" class="btn btn-voltar"><i class="fas fa-arrow-left"></i> Anterior</a>` : `<div></div>` }
+                        ${ i < temas.length - 1 ? `<a href="#pagina-${temas[i+1].id}" class="btn">Próximo <i class="fas fa-arrow-right"></i></a>` : `<div></div>` }
+                    </div>
 
-    carregarTemas();
-})();
-</script>
+                    <div style="text-align:center; margin-top:15px;">
+                        <a href="#indice" class="btn btn-voltar"><i class="fas fa-list"></i> Índice</a>
+                    </div>
+                </section>
+                `;
+            });
+            paginas.innerHTML = html;
+        }
+
+        function categoriaCor(cat) {
+            if (!cat) return '#378C8C';
+            const c = cat.toLowerCase();
+            if (c.includes('ambiente')) return '#2E7D5F';
+            if (c.includes('comport')) return '#D45A2E';
+            return '#378C8C';
+        }
+
+        // Inicializa
+        carregarTemas();
+
+        // Debug simples
+        console.log('Revista DSSMA carregada (modo dinâmico com temas.json)');
+    })();
+    </script>
 </body>
 </html>
