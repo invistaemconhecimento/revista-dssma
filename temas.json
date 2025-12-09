@@ -194,8 +194,8 @@
     "icone": "fas fa-hard-hat",
     "categoria": "Segurança",
     "badgeClass": "badge-seguranca",
-    "conteudo": "Sempre consulte a FISPQ antes de manusear. Use o EPI específico, conheça os riscos e saiba o procedimento em caso de emergência. Respeito ao químico é respeito à vida.",
-    "pergunta": "Onde você acessa a FISPQ dos produtos que utiliza?"
+    "conteudo": "Sempre consulte a FDS (ficha de dados de segurança) antes de manusear. Use o EPI específico, conheça os riscos e saiba o procedimento em caso de emergência. Respeito ao químico é respeito à vida.",
+    "pergunta": "Onde você acessa a FDS dos produtos que utiliza?"
   },
   {
     "id": 23,
